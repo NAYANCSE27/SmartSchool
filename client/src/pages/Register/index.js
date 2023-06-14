@@ -19,7 +19,7 @@ function Register() {
     <div className="h-screen flex bg-primary justify-center items-center">
       <div className="bg-white p-5 rounded w-[450px]">
         <h1 className="text-primary text-2xl">
-          OLDUCT - <span className="text-gray-400">REGISTER</span>
+          SmartSchool - <span className="text-gray-400">REGISTER</span>
         </h1>
         <Divider />
         <Form layout="vertical" onFinish={onFinish}>

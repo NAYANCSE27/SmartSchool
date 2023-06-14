@@ -19,6 +19,7 @@ root.render(
         },
         token: {
           borderRadius: "2px",
+          colorPrimary: "#062925",
         },
       }}
     >
