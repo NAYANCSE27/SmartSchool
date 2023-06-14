@@ -32,12 +32,6 @@ function Register() {
           <Form.Item label="Password" name="password" rules={rules}>
             <Input type="password" placeholder="Password" />
           </Form.Item>
-          <Form.Item label="User Type" name="user" rules={rules}>
-            <select>
-              <option value="student">Student</option>
-              <option value="teacher">Teacher</option>
-            </select>
-          </Form.Item>
 
           <Button type="primary" htmlType="submit" block className="mt-2">
             Register
