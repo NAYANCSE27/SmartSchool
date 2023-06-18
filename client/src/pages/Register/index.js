@@ -1,7 +1,8 @@
 import React from "react";
-import { Button, Form, Input } from "antd";
+import { Button, Form, Input, message } from "antd";
 import { Link } from "react-router-dom";
 import Divider from "../../components/Divider";
+import { RegisterUser } from "../../api/users";
 
 const rules = [
   {
@@ -11,15 +12,24 @@ const rules = [
 ];
 
 function Register() {
-  const onFinish = (values) => {
-    console.log("Success:", values);
+  const onFinish = async (values) => {
+    try {
+      const response = await RegisterUser(values);
+      if (response.success) {
+        message.success(response.message);
+      } else {
+        throw new Error(response.message);
+      }
+    } catch (error) {
+      message.error(error.message);
+    }
   };
 
   return (
     <div className="h-screen flex bg-primary justify-center items-center">
       <div className="bg-white p-5 rounded w-[450px]">
         <h1 className="text-primary text-2xl">
-          SmartSchool - <span className="text-gray-400">REGISTER</span>
+          OLDUCT - <span className="text-gray-400">REGISTER</span>
         </h1>
         <Divider />
         <Form layout="vertical" onFinish={onFinish}>
